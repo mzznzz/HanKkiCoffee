@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.study.springboot.order.IOrderDAO">
+
+	<select id="orderListDao" resultType="com.study.springboot.order.orderDTO">
+        select * from orderdto
+    </select>
+
+    <insert id="createOrder">
+        insert into orderdto (takes, cId)
+             values (#{param1}, #{param2})
+    </insert>
+
+    <select id="nowOrder" resultType="com.study.springboot.order.orderDTO">
+        SELECT * FROM orderDTO ORDER BY oDate DESC LIMIT 1
+    </select>
+
+</mapper>

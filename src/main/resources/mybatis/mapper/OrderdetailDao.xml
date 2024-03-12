@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.springboot.orderdetail.IOrderdetailDAO">
+
+    <select id="menuListDao" resultType="com.study.springboot.orderdetail.orderdetailDTO">
+        select * from orderdetail WHERE oId = 1
+    </select>
+
+    <insert id="addMenu">
+        insert into orderdetail (menu, hotIce, price, quantity)
+        values (#{param1}, #{param2}, #{param3}, #{param4})
+    </insert>
+
+	<update id="orderComplete" parameterType="com.study.springboot.orderdetail.orderdetailDTO">
+    	UPDATE orderdetail
+    	SET oId = #{param1}
+    	WHERE oId = 1
+	</update>
+
+</mapper>
